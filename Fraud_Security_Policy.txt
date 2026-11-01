@@ -1,0 +1,15 @@
+ABC BANK FRAUD DETECTION & CARD SECURITY POLICY
+
+1. TRANSACTION BLOCKING RULES
+1.1 Geo-Velocity (Impossible Travel): Any transaction where the required travel speed exceeds 900 km/h is automatically blocked, and the card is frozen.
+1.2 Amount Deviation: If the transaction amount is more than 3 standard deviations above the customer's normal spending average, the transaction is flagged for manual review.
+1.3 Device Intelligence: If a transaction occurs on a device that has never been seen before (Unknown Device) AND the transaction amount is above R5,000, the transaction requires OTP (One Time Password) verification.
+1.4 Card Testing: If a customer makes more than 3 transactions in a 1-hour window (Burst Pattern or 5x Baseline), the system must block the card to prevent automated card testing by fraudsters.
+
+2. AUTHORIZATION ERRORS
+2.1 CVV Mismatch: If the CVV is incorrect, the transaction is declined immediately, regardless of the amount.
+2.2 3D Secure: Transactions on high-risk merchant categories (e.g., electronics, luxury) require 3D Secure authentication. If the customer is not enrolled in 3DS, the transaction is flagged for manual review.
+
+3. CUSTOMER SERVICE ESCALATION
+3.1 When a customer calls to unblock a card, the agent must ask for the last 4 digits of the SSN and verify the account balance.
+3.2 If the model flagged the transaction as "High Risk" (Probability > 50%), the agent must transfer the call to the Fraud Investigation Team.
