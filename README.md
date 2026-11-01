@@ -29,19 +29,14 @@ For a standard transaction (e.g., R500, Known Device, Normal Velocity), the XGBo
 ![Fraud Dashboard Approved](fraud_dashboard_approved.png)
 
 ### 2. The Exception Flow (Blocked)
-When a transaction exhibits strong fraud patterns (e.g., R25,000, Unknown Device, Impossible Geo-Velocity), the model catches it and outputs a **BLOCK TRANSACTION** decision.
+### 2.1 The AI Copilot (Exception Handling)
+
+Step1: Customer service agents cannot read XGBoost feature weights. When a transaction is blocked, the agent asks the AI: "Why was this transaction blocked?" The RAG pipeline reads the Fraud Security Policy and explains the exact rules triggered.
+
+Step 2: AI Explanation The agent asks: "Why was this transaction blocked?" The AI analyzes the transaction data, searches the policy document, and explains the exact rules triggered.
+When a transaction exhibits strong fraud patterns (e.g., R25,000, Unknown Device, Impossible Geo-Velocity, Avg_ampint_deviation(sigma), the model catches it and outputs a **BLOCK TRANSACTION** decision.
 
 ![Fraud Dashboard Blocked](fraud_dashboard_blocked.png)
-
-### 3. The AI Copilot (Exception Handling)
-Customer service agents cannot read XGBoost feature weights. When a transaction is blocked, the agent asks the AI: *"Why was this transaction blocked?"* The RAG pipeline reads the Fraud Security Policy and explains the exact rules triggered.
-
-![Fraud AI Chat](fraud_ai_chat.png)
-*Figure 4: The AI FDE Copilot in action, citing Section 1.1 (Impossible Travel) and Section 2.1 (CVV Mismatch).*
-
-**Step 2: AI Explanation**
-The agent asks: *"Why was this transaction blocked?"* The AI analyzes the transaction data, searches the policy document, and explains the exact rules triggered.
-![Fraud AI Chat](fraud_ai_chat.png)
 
 ## How to Run the App
 1. Clone the repository.
