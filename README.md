@@ -47,3 +47,6 @@ When a transaction exhibits strong fraud patterns (e.g., R25,000, Unknown Device
 4. Run the Streamlit App:
    ```bash
    streamlit run fraud_ai_fde.py
+
+**Author:** Raymond Sibanda | [LinkedIn](https://www.linkedin.com/in/raymond-sibanda-91850613b) |
+FRM | BSc Mathematics | BCom Honors Accountancy
